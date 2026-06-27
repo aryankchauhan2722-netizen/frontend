@@ -1,11 +1,11 @@
 import styles from './Achievements.module.css'
-// import { achievements } from '../../../constants/achievements' // static data tha jo abhi use nai kiya he 
+// import { achievements } from '../../../constants/achievements' // static data tha jo abhi use nai kiya he
 import useScrollAnimation from '../../../hooks/useScrollAnimation'
 
-// Backend ka kam karne ke liye use kiya he 
+// Backend ka kam karne ke liye use kiya he
 import { useEffect,useState } from 'react'
 import { getAchievement } from '../../../services/api'
-// End 
+// End
 
 const achievementSymbols = ['🏆', '⭐', '🥇', '🎯', '🔥', '💪', '🎓', '✨', '🏅', '👑', '🚀', '💡']
 
@@ -16,13 +16,13 @@ const Achievements = () => {
     // data ko manage karne ke liye
     const [achievements,setAchievements] = useState([])
 
-    //  data ko bulavo useeffect me 
+    //  data ko bulavo useeffect me
 
     useEffect(()=>{
       const FetchAchievemnets = async () => {
         try {
           const res = await getAchievement()
-          
+
           setAchievements(res.data.data)
         } catch (error) {
           console.log('Error : ',error)
@@ -30,7 +30,7 @@ const Achievements = () => {
       }
       FetchAchievemnets()
     },[])
-    
+
   return (
     <section className={styles.achievements} id="achievements" ref={ref}>
 
@@ -76,7 +76,7 @@ const Achievements = () => {
               <div className={styles.card}>
                 <div className={styles.cardImg}>
                   {item.image ? (
-                    <img src={`http://localhost:5000${item.image}`} alt={item.title} />
+                    <img src={`https://aryanportfolio-backend.onrender.com${item.image}`} alt={item.title} />
                   ) : (
                     <div className={styles.imgPlaceholder}>
                       <span>{item.icon}</span>

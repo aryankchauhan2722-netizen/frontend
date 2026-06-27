@@ -97,15 +97,15 @@ const Hero = () => {
           <div className={styles.btnGroup}>
             <a href="#contact" className={styles.primaryBtn}>
               Hire Me
-            </a>  
+            </a>
             <a
-              href={`http://localhost:5000${resume}`}
+              href={`https://aryanportfolio-backend.onrender.com${resume}`}
               download
               className={styles.secondaryBtn}
             >
               <FaDownload size={14} /> Download CV
             </a>
-            
+
           </div>
 
           <div className={styles.socials}>

@@ -14,8 +14,8 @@ const ProjectCards = ({ project }) => {
         {/* Image */}
         <div className={styles.cardImg}>
           {project.image ? (
-            <img src={`http://localhost:5000${project.image}`} alt={project.name} />
-          ) : ( 
+            <img src={`https://aryanportfolio-backend.onrender.com${project.image}`} alt={project.name} />
+          ) : (
             <div className={styles.imgPlaceholder}>
               <span>{project.name[0]}</span>
             </div>
