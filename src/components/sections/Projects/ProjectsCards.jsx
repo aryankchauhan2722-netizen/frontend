@@ -2,8 +2,10 @@ import { useState } from "react";
 import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import styles from "./Projects.module.css";
 
-const ProjectCards = ({ project }) => {
+const ProjectCards = ({ project , index }) => {
   const [showModal, setShowModal] = useState(false);
+
+  const cardNumber = String(index + 1).padStart(2, "0");
 
   return (
     <>
@@ -13,6 +15,7 @@ const ProjectCards = ({ project }) => {
       >
         {/* Image */}
         <div className={styles.cardImg}>
+          <div className={styles.cardNumber}>{cardNumber}</div>
           {project.image ? (
             <img src={`https://aryanportfolio-backend.onrender.com${project.image}`} alt={project.name} />
           ) : (

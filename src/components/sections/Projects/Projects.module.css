@@ -89,6 +89,30 @@
     opacity: 0;
   }
 }
+.cardNumber {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Premium Linear Gradient jo right side se sharp cross look dega */
+  background: linear-gradient(135deg, #0050fe, #7c3aed);
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem; /* Size thoda bada kiya taaki mast dikhe */
+  font-weight: 800;
+
+  /* Padding aur Ribbon size */
+  padding: 0.6rem 1.2rem 0.8rem 1.5rem;
+
+  /* Ye hai asli magic trick: Isse bottom-left corner diagonal/cross cut ho jayega */
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 25% 0);
+
+  /* Glow aur box shadow taaki image ke upar stand out kare */
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.4);
+  z-index: 10; /* Pure card me sabse upar dikhega */
+  user-select: none;
+  letter-spacing: 1px;
+  border-bottom-left-radius: 4px;
+}
 
 .projectsInner {
   width: 100%;
@@ -579,6 +603,10 @@
   .techTag {
     font-size: 0.7rem;
     padding: 0.15rem 0.5rem;
+  }
+  .cardNumber {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem 0.6rem 1.2rem;
   }
 }
 

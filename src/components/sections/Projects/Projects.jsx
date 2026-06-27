@@ -84,8 +84,12 @@ const Projects = () => {
           <div className={styles.loading}>Loading... ⏳</div>
         ) : (
           <div className={styles.projectsGrid}>
-            {projects.map((project) => (
-              <ProjectCard key={project._id} project={project} />
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.id || index}
+                project={project}
+                index={index}
+              />
             ))}
           </div>
         )}
