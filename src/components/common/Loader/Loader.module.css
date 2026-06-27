@@ -1,0 +1,86 @@
+.loaderScreen {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0f;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loaderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lottieWrapper {
+  width: 200px;
+  height: 200px;
+  margin-bottom: -2rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 3px;
+  animation: fadeIn 1s ease;
+}
+
+.logo span {
+  color: #2563eb;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .lottieWrapper {
+    width: 200px;
+    height: 200px;
+
+  }
+  .logo {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .lottieWrapper {
+    width: 200px;
+    height: 200px;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lottieWrapper {
+    width: 180px;
+    height: 180px;
+  }
+  .logo {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  .lottieWrapper {
+    width: 150px;
+    height: 150px;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+}

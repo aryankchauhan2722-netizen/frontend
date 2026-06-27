@@ -1,0 +1,341 @@
+.achievements {
+  width: 100%;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  background: #0d0d14;
+  background-image:
+    radial-gradient(ellipse at 30% 50%, rgba(37,99,235,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 20%, rgba(124,58,237,0.12) 0%, transparent 50%),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 45px 45px, 45px 45px;
+}
+
+.achievements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2563eb, #7c3aed, transparent);
+}
+
+.achievements.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.decorBg1 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decorBg2 {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Floating Symbols */
+.floatSymbol {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatDiag linear infinite;
+  user-select: none;
+  filter: opacity(0.15);
+}
+
+@keyframes floatDiag {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    transform: translateY(-150px) translateX(-30px) rotate(-180deg);
+    opacity: 0;
+  }
+}
+
+/* Inner */
+.achievementsInner {
+  width: 100%;
+  padding: 0 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Head */
+.sectionHead {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tag {
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+.title span {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Center Line */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #2563eb, #7c3aed, transparent);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Timeline Item */
+.timelineItem {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* Left card */
+.left .card {
+  grid-column: 1;
+  justify-self: end;
+  width: 90%;
+}
+
+.left .dot {
+  grid-column: 2;
+}
+
+/* Empty space for right side on left items */
+.left::after {
+  content: '';
+  grid-column: 3;
+}
+
+/* Right card */
+.right .card {
+  grid-column: 3;
+  justify-self: start;
+  width: 90%;
+}
+
+.right .dot {
+  grid-column: 2;
+}
+
+/* Empty space for left side on right items */
+.right::before {
+  content: '';
+  grid-column: 1;
+}
+
+/* Dot */
+.dot {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(37,99,235,0.6);
+  border: 3px solid #0d0d14;
+  justify-self: center;
+}
+
+/* Card */
+.card {
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: rgba(37,99,235,0.5);
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 25px rgba(37,99,235,0.2),
+    0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Card Image */
+.cardImg {
+  width: 100%;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImg img {
+  transform: scale(1.05);
+}
+
+.imgPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(124,58,237,0.2));
+  font-size: 3.5rem;
+}
+
+/* Hover Overlay */
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 60%, transparent 100%);
+  padding: 1.5rem 1.2rem 1rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  z-index: 3;
+}
+
+.card:hover .cardOverlay {
+  transform: translateY(0);
+}
+
+.overlayCollege {
+  color: #60a5fa;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.overlayYear {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cardContent h3 {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.college {
+  color: #60a5fa;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.year {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .achievementsInner {
+    padding: 0 1.5rem;
+  }
+
+  .timelineLine {
+    left: 20px;
+  }
+
+  .timelineItem {
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding-left: 50px;
+  }
+
+  .left .card,
+  .right .card {
+    width: 100%;
+    margin: 0;
+  }
+
+  .dot {
+    left: 20px;
+    top: 0;
+    transform: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .floatSymbol {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievementsInner {
+    padding: 0 1rem;
+  }
+}
