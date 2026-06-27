@@ -309,9 +309,11 @@
   }
 
   .timelineItem {
-    flex-direction: column !important;
+    flex-direction: row !important;
     align-items: flex-start;
-    padding-left: 50px;
+    gap: 1rem;
+    padding-left: 20px;
+    width: 100%;
   }
 
   .left .card,
@@ -321,12 +323,13 @@
   }
 
   .dot {
+    position: absolute;
     left: 20px;
-    top: 0;
-    transform: none;
+    transform: translateX(-50%);
     width: 40px;
     height: 40px;
     font-size: 1rem;
+    flex-shrink: 0;
   }
 
   .floatSymbol {
