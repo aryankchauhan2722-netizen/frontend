@@ -62,16 +62,19 @@
 }
 
 /* Floating Code Symbols */
+/* Floating Code Symbols */
 .codeSymbol {
   position: absolute;
-  color: #2563eb;
+  /* Pure blue ki jagah thoda transparent white ya transparent blue use karein */
+  color: rgba(37, 100, 235, 0.53); /* 0.25 matlab 25% opacity, isko aap 0.15 tak bhi kam kar sakte hain */
   font-family: 'Courier New', monospace;
   font-weight: 700;
   pointer-events: none;
   z-index: 0;
   animation: floatUp linear infinite;
   user-select: none;
-  text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+  /* Glow ko bhi soft aur light kiya hai */
+  text-shadow: 0 0 8px rgba(37, 99, 235, 0.15);
 }
 
 @keyframes floatUp {
@@ -137,7 +140,7 @@
 /* Main Card */
 .card {
   background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 2px solid rgba(2, 12, 192, 0.674);
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -518,28 +521,81 @@
   line-height: 1.5;
 }
 
+
+
 /* Modal Scrollbar */
 .modal::-webkit-scrollbar { width: 4px; }
 .modal::-webkit-scrollbar-track { background: #0f172a; }
 .modal::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 2px; }
 
-/* Responsive */
 @media (max-width: 1024px) {
-  .projectsInner { padding: 0 3rem; }
-  .projectsGrid { grid-template-columns: repeat(2, 1fr); }
-  .projectsGrid { gap: 1.8rem; }
+  .projectsInner {
+    padding: 0 2rem;
+  }
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet pe 2 columns */
+  }
 }
 
 @media (max-width: 768px) {
-  .projects { padding: 4rem 0; }
-  .projectsInner { padding: 0 1.5rem; }
-  .projectsGrid { grid-template-columns: 1fr; }
-  .panelGrid { grid-template-columns: 1fr; }
-  .decorStar1, .decorStar2 { display: none; }
+  .projects {
+    padding: 4rem 0;
+  }
+  .projectsInner {
+    padding: 0 1.2rem;
+  }
+  .projectsGrid {
+    grid-template-columns: 1fr; /* Mobile pe 1 column */
+    gap: 1.2rem;
+  }
+  .sectionHead {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile par card image ki height kam ki taaki card lamba na dikhe */
+  .cardImg {
+    height: 160px;
+  }
+
+  /* Mobile par card ke andar ki spacing thodi compress ki */
+  .cardContent {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .cardContent h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Yellow badge/text text aur padding choti ki */
+  .highlight {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+  }
+
+  /* Tech tags ko thoda small kiya */
+  .techTag {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .projectsInner { padding: 0 1rem; }
-  .modal { padding: 1.2rem; }
-  .sectionHead {margin-right: 5rem;}
+  .projectsInner {
+    padding: 0 1rem;
+  }
+  .sectionHead {
+    margin-right: 0;
+  }
+
+  /* Ekdum choti screens ke liye image thodi aur compact */
+  .cardImg {
+    height: 140px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
 }
