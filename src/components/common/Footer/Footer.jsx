@@ -23,9 +23,9 @@ const Footer = () => {
             <div className={styles.logo}>AC<span>.</span></div>
             <p>A passionate Full Stack Developer And Data analysis from Building modern web apps with clean code and creative designs and handle the deep anaysis and various dataset </p>
             <div className={styles.socials}>
-              <a href="https://github.com/" target="_blank" rel="noreferrer"><FaGithub /></a>
-              <a href="https://linkedin.com/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-              <a href="https://instagram.com/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+              <a href="https://github.com/aryankchauhan2722-netizen" target="_blank" rel="noreferrer"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/aryanchauhan9173?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+              <a href="https://www.instagram.com/_aryan._.549?igsh=aHdoeTFnMnY1MHJp" target="_blank" rel="noreferrer"><FaInstagram /></a>
             </div>
           </div>
 

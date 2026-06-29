@@ -109,13 +109,13 @@ const Hero = () => {
           </div>
 
           <div className={styles.socials}>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/aryanchauhan9173?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <a href="https://github.com/aryankchauhan2722-netizen" target="_blank" rel="noreferrer">
               <FaGithub />
             </a>
-            <a href="https://instagram.com/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/_aryan._.549?igsh=aHdoeTFnMnY1MHJp" target="_blank" rel="noreferrer">
               <FaInstagram />
             </a>
           </div>
