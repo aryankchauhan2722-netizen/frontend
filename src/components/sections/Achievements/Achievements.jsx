@@ -89,8 +89,8 @@ const Achievements = () => {
                 </div>
                 <div className={styles.cardContent}>
                   <h3>{item.title}</h3>
-                  <p className={styles.college}>{item.college}</p>
-                  <p className={styles.year}>{item.year}</p>
+                  {/* <p className={styles.college}>{item.college}</p>
+                  <p className={styles.year}>{item.year}</p> */}
                 </div>
               </div>
 
