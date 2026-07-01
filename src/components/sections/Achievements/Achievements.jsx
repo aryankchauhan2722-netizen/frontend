@@ -76,7 +76,7 @@ const Achievements = () => {
               <div className={styles.card}>
                 <div className={styles.cardImg}>
                   {item.image ? (
-                    <img src={`https://aryanportfolio-backend.onrender.com${item.image}`} alt={item.title} />
+                    <img src={item.image} alt={item.title} />
                   ) : (
                     <div className={styles.imgPlaceholder}>
                       <span>{item.icon}</span>

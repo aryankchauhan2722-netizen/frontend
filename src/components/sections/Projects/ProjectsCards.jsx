@@ -17,7 +17,7 @@ const ProjectCards = ({ project , index }) => {
         <div className={styles.cardImg}>
           <div className={styles.cardNumber}>{cardNumber}</div>
           {project.image ? (
-            <img src={`https://aryanportfolio-backend.onrender.com${project.image}`} alt={project.name} />
+            <img src={project.image} alt={project.name} />
           ) : (
             <div className={styles.imgPlaceholder}>
               <span>{project.name[0]}</span>
