@@ -20,6 +20,9 @@ import toast from "react-hot-toast";
 const Contact = () => {
   const ref = useScrollAnimation();
 
+  // loading forma ke liye
+  const [loading,setloading] = useState(false)
+
   // Backend work
   const [formdata, setFormData] = useState({
     // Iska use data ko lane ke liye form mese  :-
@@ -58,6 +61,7 @@ const Contact = () => {
       });
       return;
     }
+    setloading(true)
     // console.log('Form data :',formdata)
     try {
       await sendContact(formdata);
@@ -90,6 +94,8 @@ const Contact = () => {
           padding: "16px 24px",
         },
       });
+    }finally{
+      setloading(false)
     }
   };
 
@@ -210,8 +216,9 @@ const Contact = () => {
                 />
               </div>
 
-              <button type="submit" className={styles.submitBtn}>
-                Send Message
+              <button type="submit" className={styles.submitBtn} disabled={loading}>
+                {loading ?(<span className={styles.spinner}></span>)
+                :"Send Message"}
               </button>
             </form>
           </div>
